@@ -8,7 +8,7 @@
 In this github repo you'll find 3 files:
 1. The README file that you are reading at the moment
 2. The Codebook which contains information about what each variable in the tidy data is (note: my tidy data is uploaded on Coursera)
-3. An R script called "run_analysis.RÓ
+3. An R script called "run_analysis.R"
 
 ##Running the R Script
 If you'd like to test out my R script, please do the following: 
