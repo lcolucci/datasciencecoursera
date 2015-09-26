@@ -13,30 +13,36 @@ In this github repo you'll find 3 files:
 ##Running the R Script
 If you'd like to test out my R script, please do the following: 
 1. Download and open my R script and set your working directory path on line 17 (just above "library(dplyr)".
-2. Place the unzipped Samsung data into your working directory. The folder must be called "UCI HAR Dataset". DO NOT change anything about what the folders are called or the sub-folder structure. The data can be downloaded from here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+2. Place the unzipped Samsung data into your working directory. The folder must be called "UCI HAR Dataset". DO NOT change anything about what the folders are called or the sub-folder structure. The data can be downloaded from here: [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
 ##Here's How the Script Works
-Part 0. Loads the data files into the R workspace
-Part 1. First, all the training set files are combined into a data frame called "trainÓ. Train's first column contains the subject IDs (from "subject_train.txt"). The second column contains the activity type (from "y_train.txt"). The rest of the columns are outputs from the gyroscope and accelerometer (from "x_train.txt"). The "train" columns are labeled with the names contained in "features.txt". The "subject" and "activity" column were manually labeled with those column names. All column names are explained further in the codebook. 
-       Dimensions of Train: dim(train) = 7352 x 563
+###Part 0. 
+Loads the data files into the R workspace
 
-        Second, the same thing explained above for the training set was done for the test set. This was saved into a data frame called "test"
-      Dimensions of Test: dim(test) = 2947 x 563
+###Part 1. 
+First, all the training set files are combined into a data frame called "train". Train's first column contains the subject IDs (from "subject-train.txt"). The second column contains the activity type (from "y-train.txt"). The rest of the columns are outputs from the gyroscope and accelerometer (from "x_train.txt"). The "train" columns are labeled with the names contained in "features.txt". The "subject" and "activity" column were manually labeled with those column names. All column names are explained further in the codebook. 
+> Dimensions of Train: dim(train) = 7352 x 563
 
-    Finally, the "train" and "test" sets were merged together. I appended the "test" results to the bottom of "train" results using rbind(). This result is saved in a data frame called "part1result"
-       Dimensions of Part1Result: dim(part1result) = 10299 x 563
+Second, the same thing explained above for the training set was done for the test set. This was saved into a data frame called "test"
+> Dimensions of Test: dim(test) = 2947 x 563
 
-Part 2. I selected all the "mean" and "standard deviation" columns from the "part1result" data frame. I did this by using dplyr's "select" function to choose only columns that contained the word "meanÓ or the word "stdÓ (ignoring the case of the word). 
-    To be specific, I first selected out the just the columns with "meanÓ ("select(full, contains("mean", ignore.case=TRUE))") then I selected out just the columns with "stdÓ. Then I put those two intermediate data frames together and added back the "subject" and "activity" columns. 
-    I saved this result in a data frame called "part2result".  
+Finally, the "train" and "test" sets were merged together. I appended the "test" results to the bottom of "train" results using rbind(). This result is saved in a data frame called **"part1result"**. 
+> Dimensions of Part1Result: dim(part1result) = 10299 x 563
 
+###Part 2. 
+I selected all the "mean" and "standard deviation" columns from the "part1result" data frame. I did this by using dplyr's "select" function to choose only columns that contained the word "meanÓ or the word "stdÓ (ignoring the case of the word). 
+To be specific, I first selected out the just the columns with "meanÓ (*"select(full, contains("mean", ignore.case=TRUE))"*) then I selected out just the columns with "stdÓ. Then I put those two intermediate data frames together and added back the "subject" and "activity" columns. 
+I saved this result in a data frame called **"part2result"**.  
 
-Part 3. I used the lookup book provided to us in "activity_labels.txt" to rename the activity column in the "part2result" data frame with string descriptions instead of just numbers. For example, I renamed all the "1Ó's with "WALKINGÓ. I saved these results in a data frame called "part3result". 
+###Part 3. 
+I used the lookup book provided to us in "activity_labels.txt" to rename the activity column in the "part2result" data frame with string descriptions instead of just numbers. For example, I renamed all the "1Ó's with "WALKINGÓ. I saved these results in a data frame called **"part3result"**. 
 
-Part 4. I had already ensured all of my columns were properly named in Part 1 and so there was nothing I needed to do in this section. 
+###Part 4. 
+I had already ensured all of my columns were properly named in Part 1 and so there was nothing I needed to do in this section. I just created **"part4result"** (but it's identical to "part3result").
 
-Part 5. We were asked to calculate some statistics for each activity and each subject. I used the group_by() functionality to group the "part3result" data by both activity and subject. Once I had these groupings, I calculated the mean of each group using the summarise_each() function. I ignored the NA values when calculating the mean. I saved the results of this analysis into a data frame called "finaltidydata". 
-     Dimensions of Final Tidy Data: dim(finaltidydata) = 180 x 88 
+###Part 5. 
+We were asked to calculate some statistics for each activity and each subject. I used the group_by() functionality to group the "part3result" data by both activity and subject. Once I had these groupings, I calculated the mean of each group using the summarise_each() function. I ignored the NA values when calculating the mean. I saved the results of this analysis into a data frame called **"finaltidydata"**. 
+> Dimensions of Final Tidy Data: dim(finaltidydata) = 180 x 88 
 
 As a sanity check, I know I have the right number of rows in "finaltidydata" because we should have a row for every activity and subject grouping. There are 6 activities and 30 subjects. 6*30=180 rows. 
 
