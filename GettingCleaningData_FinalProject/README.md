@@ -4,7 +4,7 @@
 
 ==================================================================
 
-####Greetings! And welcome to my submission for the final class project on "Getting and Cleaning Data"! 
+####Greetings! And welcome to my submission for the final class project on "Getting and Cleaning Data". 
 
 ==================================================================
 
