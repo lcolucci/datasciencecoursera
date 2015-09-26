@@ -11,7 +11,7 @@
 ##Getting Oriented
 In this github repo you'll find 3 files:   
 1. The README file that you are reading at the moment    
-2. The Codebook which contains information about what each variable in the tidy data is (note: my tidy data is uploaded on Coursera)    
+2. The Codebook which contains information about each variable in the tidy data (*Note: my tidy data is uploaded on Coursera*)    
 3. An R script called "run_analysis.R"    
 
 ##Running the R Script
@@ -53,8 +53,8 @@ As a sanity check, I know I have the right number of rows in "finaltidydata" bec
 
 ####That's all I've got. 
 
-Thanks for reading!
-Lina
+####Thanks for reading!  
+####Lina  
 
 
 ####Btw...
