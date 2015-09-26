@@ -1,20 +1,21 @@
 # Getting and Cleaning Data: Course Project
 # 
+# HELLO FELLOW COURSERIAN :) 
+# If you would like to run my code, please insert your working directory path into 
+# the 'setwd()' command that is currently commented out (right above 'library(dplyr)'). 
+# Remember that the 'UCI HAR Dataset' must be located in your working directory.  
+# After you've done that, just hit run and have fun! 
+# 
 # Created by L.Colucci 2015-09-26
+#
+
 
 # ------------------------- Part 0 -----------------------------------
 # GOAL Load necessary packages, and load files into the R workspace. 
 
 # Set working directory + load packages
-#setwd("~/Documents/Coursera/gettingcleaningdata")
+#setwd("[INSERT YOUR WORKING DIRECTORY HERE]") #!!!TO SOMEONE 
 library(dplyr)
-
-# Download data and zip into working directory
-#dataset_url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-#download.file(dataset_url, "project_data.zip")
-#unzip("project_data.zip", exdir="project_data") 
-#I then manually moved the subfolder out into main folder (i.e. no longer using project_data folder)
-#DATA IS ALREADY loaded into my folder. Don't need to download and unzip any more. 
 
 #Load files into workspace 
 activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")
@@ -87,5 +88,5 @@ tidydata_groupby <- group_by(part4result, activity, subject) #group the data by 
 finaltidydata <- summarise_each(tidydata, funs(mean(.,na.rm=TRUE))) #take mean of each group and write results to new dataset
 
 # Print results
-write.table(finaltidydata, "finaltidydata.txt", row.names = FALSE)
+write.table(finaltidydata, "finaltidydata.txt", row.names = FALSE) #This result will be saved into your working directory 
 
