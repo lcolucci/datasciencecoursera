@@ -9,15 +9,15 @@
 ==================================================================
 
 ##Getting Oriented
-In this github repo you'll find 3 files:
-1. The README file that you are reading at the moment
-2. The Codebook which contains information about what each variable in the tidy data is (note: my tidy data is uploaded on Coursera)
-3. An R script called "run_analysis.R"
+In this github repo you'll find 3 files:   
+1. The README file that you are reading at the moment    
+2. The Codebook which contains information about what each variable in the tidy data is (note: my tidy data is uploaded on Coursera)    
+3. An R script called "run_analysis.R"    
 
 ##Running the R Script
-If you'd like to test out my R script, please do the following: 
-1. Download and open my R script and set your working directory path on line 17 (just above "library(dplyr)".
-2. Place the unzipped Samsung data into your working directory. The folder must be called "UCI HAR Dataset". DO NOT change anything about what the folders are called or the sub-folder structure. The data can be downloaded from here: [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
+If you'd like to test out my R script, please do the following:    
+1. Download and open my R script and set your working directory path on line 17 (just above "library(dplyr)".    
+2. Place the unzipped Samsung data into your working directory. The folder must be called "UCI HAR Dataset". DO NOT change anything about what the folders are called or the sub-folder structure. The data can be downloaded from here: [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)    
 
 ##Here's How the Script Works
 ####Part 0. 
