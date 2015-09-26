@@ -8,16 +8,16 @@
 In this github repo you'll find 3 files:
 1. The README file that you are reading at the moment
 2. The Codebook which contains information about what each variable in the tidy data is (note: my tidy data is uploaded on Coursera)
-3. An R script called “run_analysis.R”
+3. An R script called "run_analysis.R”
 
 ##Running the R Script
 If you'd like to test out my R script, please do the following: 
-1. Download and open my R script and set your working directory path on line 17 (just above “library(dplyr)“.
-2. Place the unzipped Samsung data into your working directory. The folder must be called “UCI HAR Dataset”. DO NOT change anything about what the folders are called or the sub-folder structure. The data can be downloaded from here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+1. Download and open my R script and set your working directory path on line 17 (just above "library(dplyr)".
+2. Place the unzipped Samsung data into your working directory. The folder must be called "UCI HAR Dataset". DO NOT change anything about what the folders are called or the sub-folder structure. The data can be downloaded from here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 ##Here's How the Script Works
 Part 0. Loads the data files into the R workspace
-Part 1. First, all the training set files are combined into a data frame called “train”. Train's first column contains the subject IDs (from "subject_train.txt"). The second column contains the activity type (from "y_train.txt"). The rest of the columns are outputs from the gyroscope and accelerometer (from "x_train.txt"). The "train" columns are labeled with the names contained in "features.txt". The "subject" and "activity" column were manually labeled with those column names. All column names are explained further in the codebook. 
+Part 1. First, all the training set files are combined into a data frame called "train”. Train's first column contains the subject IDs (from "subject_train.txt"). The second column contains the activity type (from "y_train.txt"). The rest of the columns are outputs from the gyroscope and accelerometer (from "x_train.txt"). The "train" columns are labeled with the names contained in "features.txt". The "subject" and "activity" column were manually labeled with those column names. All column names are explained further in the codebook. 
        Dimensions of Train: dim(train) = 7352 x 563
 
         Second, the same thing explained above for the training set was done for the test set. This was saved into a data frame called "test"
@@ -26,12 +26,12 @@ Part 1. First, all the training set files are combined into a data frame called 
     Finally, the "train" and "test" sets were merged together. I appended the "test" results to the bottom of "train" results using rbind(). This result is saved in a data frame called "part1result"
        Dimensions of Part1Result: dim(part1result) = 10299 x 563
 
-Part 2. I selected all the "mean" and "standard deviation" columns from the "part1result" data frame. I did this by using dplyr's "select" function to choose only columns that contained the word “mean” or the word “std” (ignoring the case of the word). 
-    To be specific, I first selected out the just the columns with “mean” ("select(full, contains("mean", ignore.case=TRUE))") then I selected out just the columns with “std”. Then I put those two intermediate data frames together and added back the "subject" and "activity" columns. 
+Part 2. I selected all the "mean" and "standard deviation" columns from the "part1result" data frame. I did this by using dplyr's "select" function to choose only columns that contained the word "mean” or the word "std” (ignoring the case of the word). 
+    To be specific, I first selected out the just the columns with "mean” ("select(full, contains("mean", ignore.case=TRUE))") then I selected out just the columns with "std”. Then I put those two intermediate data frames together and added back the "subject" and "activity" columns. 
     I saved this result in a data frame called "part2result".  
 
 
-Part 3. I used the lookup book provided to us in "activity_labels.txt" to rename the activity column in the "part2result" data frame with string descriptions instead of just numbers. For example, I renamed all the “1”'s with “WALKING”. I saved these results in a data frame called "part3result". 
+Part 3. I used the lookup book provided to us in "activity_labels.txt" to rename the activity column in the "part2result" data frame with string descriptions instead of just numbers. For example, I renamed all the "1”'s with "WALKING”. I saved these results in a data frame called "part3result". 
 
 Part 4. I had already ensured all of my columns were properly named in Part 1 and so there was nothing I needed to do in this section. 
 
