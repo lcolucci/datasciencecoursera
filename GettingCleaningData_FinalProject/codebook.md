@@ -3,8 +3,8 @@ Code Book
 
 
 ### Final Tidy Data
-In "finaltidydata", there are  86 (NOT including 'subject' and 'activity') of the original 561 variables given in the raw data. The 88 variables are the mean or standard deviation columns (let's call this data frame "subset-df"). 
-"Subset-df" was grouped by activity and subject. For every combination of activity (m=6) and subject (n=30), we calculated the average of those 88 variables. Our tidy data therefore contains 180 observations/rows and 88 variables/columns. 
+In "finaltidydata", there are  86 (NOT including 'subject' and 'activity') of the original 561 variables given in the raw data ("x_test.txt" and "x_train.txt"). The 88 variables are the mean or standard deviation columns (let's call this data frame "subset-df"). 
+"Subset-df" was grouped by activity and subject. For every combination of activity (m=6) and subject (n=30), we calculated the average of those 88 variables. Our tidy data therefore contains 180 observations/rows (of the original 10299 rows) and 88 variables/columns. 
 
 
 ###Notation and Units 
@@ -16,12 +16,12 @@ In "finaltidydata", there are  86 (NOT including 'subject' and 'activity') of th
 * subject - There are 30 subjects in this study
 * activity - Each subject performed 6 different activities
                           
-* tBodyAcc.mean - XYZ                                  
-* tGravityAcc.mean - XYZ                               
-* tBodyAccJerk.mean - XYZ               
-* tBodyGyro.mean - XYZ                            
-* tBodyGyroJerk.mean - XYZ           
-* tBodyAccMag.mean                
+* tBodyAcc.mean - XYZ                                
+* tGravityAcc.mean - XYZ  
+* tBodyAccJerk.mean - XYZ  
+* tBodyGyro.mean - XYZ  
+* tBodyGyroJerk.mean - XYZ  
+* tBodyAccMag.mean             
 * tGravityAccMag.mean         
 * tBodyAccJerkMag.mean            
 * tBodyGyroMag.mean         
@@ -44,9 +44,9 @@ In "finaltidydata", there are  86 (NOT including 'subject' and 'activity') of th
 * angle.tBodyAccJerkMean..gravityMean
 * angle.tBodyGyroMean.gravityMean
 * angle.tBodyGyroJerkMean.gravityMean
-* angle.X.gravityMean         
-* angle.Y.gravityMean                
-* angle.Z.gravityMean
+* angle.X.gravityMean   
+* angle.Y.gravityMean              
+* angle.Z.gravityMean  
               
 * tBodyAcc.std - XYZ                   
 * tGravityAcc.std - XYZ  
