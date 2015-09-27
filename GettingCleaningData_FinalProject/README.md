@@ -52,11 +52,16 @@ As a sanity check, I know I have the right number of rows in "finaltidydata" bec
 
 
 ####That's all I've got. 
-
+    
+         
+         
 ####Thanks for reading!  
 ####Lina  
+    
 
-
+      
+            
+                
 ####Btw...
 PS - If you'd like to read up on how the original data was collected and/or what the raw data files mean, I've included the description by the authors of that original data here: 
 
